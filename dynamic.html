@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .content-wrapper {
+            min-height: calc(100vh - 100px); /* Adjust according to footer height */
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+
+<div class="container mx-auto p-4 max-w-4xl content-wrapper">
+    <h1 class="text-4xl font-extrabold mb-6 text-center text-blue-600">Editable Resume</h1>
+
+    <!-- Editable Resume Section -->
+    <div id="editable-resume" class="bg-white p-6 rounded-lg shadow-lg mb-6">
+        <h2 class="text-2xl font-semibold mb-6 text-gray-800">Edit Your Resume</h2>
+
+        <!-- Personal Information Section -->
+        <div id="personal-info" class="mb-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-700">Personal Information</h3>
+            <div id="personal-info-content" class="border border-gray-300 p-4 rounded-lg bg-gray-50">
+                <label class="block mb-2 text-sm font-medium text-gray-600" for="editableName">Your Name</label>
+                <p contenteditable="true" id="editableName" class="border p-2 rounded bg-white mb-4"></p>
+                
+                <label class="block mb-2 text-sm font-medium text-gray-600" for="editableEmail">Your Email Address</label>
+                <p contenteditable="true" id="editableEmail" class="border p-2 rounded bg-white mb-4"></p>
+                
+                <label class="block mb-2 text-sm font-medium text-gray-600" for="editablePhone">Your Phone Number</label>
+                <p contenteditable="true" id="editablePhone" class="border p-2 rounded bg-white"></p>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div id="education" class="mb-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-700">Education</h3>
+            <div id="education-content" class="border border-gray-300 p-4 rounded-lg bg-gray-50">
+                <label class="block mb-2 text-sm font-medium text-gray-600">Your Degree</label>
+                <p contenteditable="true" class="border p-2 rounded bg-white mb-4"></p>
+                
+                <label class="block mb-2 text-sm font-medium text-gray-600">Your University - Year</label>
+                <p contenteditable="true" class="border p-2 rounded bg-white"></p>
+            </div>
+        </div>
+
+        <!-- Work Experience Section -->
+        <div id="work-experience" class="mb-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-700">Work Experience</h3>
+            <div id="work-experience-content" class="border border-gray-300 p-4 rounded-lg bg-gray-50">
+                <label class="block mb-2 text-sm font-medium text-gray-600">Your Job Title at Company</label>
+                <p contenteditable="true" class="border p-2 rounded bg-white mb-4"></p>
+                
+                <label class="block mb-2 text-sm font-medium text-gray-600">Describe your responsibilities and achievements</label>
+                <p contenteditable="true" class="border p-2 rounded bg-white"></p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="mb-6">
+            <h3 class="text-xl font-semibold mb-4 text-gray-700">Skills</h3>
+            <div id="skills-content" class="border border-gray-300 p-4 rounded-lg bg-gray-50">
+                <p contenteditable="true" class="border p-2 rounded bg-white"></p>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex space-x-4">
+            <button id="generate-resume" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition">Generate Resume</button>
+            <button id="download-pdf" class="bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition">Download as PDF</button>
+        </div>
+    </div>
+
+    <!-- Resume Display Section -->
+    <div id="resume" class="bg-white p-6 rounded-lg shadow-lg hidden">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Generated Resume</h2>
+        <p class="text-md font-medium text-gray-700 mb-2">Name: <span id="displayName" class="font-normal text-gray-600"></span></p>
+        <p class="text-md font-medium text-gray-700 mb-2">Email: <span id="displayEmail" class="font-normal text-gray-600"></span></p>
+        <p class="text-md font-medium text-gray-700 mb-2">Education: <span id="displayEducation" class="font-normal text-gray-600"></span></p>
+        <p class="text-md font-medium text-gray-700 mb-2">Work Experience: <span id="displayWorkExperience" class="font-normal text-gray-600"></span></p>
+        <p class="text-md font-medium text-gray-700">Skills: <span id="displaySkills" class="font-normal text-gray-600"></span></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white p-4 text-center">
+    <p class="text-sm">&copy; 2024 Hadiqa Gohar. All rights reserved.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
